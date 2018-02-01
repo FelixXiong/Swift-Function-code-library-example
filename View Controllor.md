@@ -1,4 +1,4 @@
-### View Contrllor
+### View Controllor
 
 ###### 设置视图控制器的背景色
 
