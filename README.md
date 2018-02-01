@@ -10,7 +10,7 @@ This is my Swift Function code library example.
 
 关于我的学习笔记，在GitBook上进行更新。
 
-链接：https://www.gitbook.com/book/felixxiong/learn-swift-study-note/details
+链接：https://www.gitbook.com/@felixxiong
 
 微博：@爱折腾手机的伙子
 
