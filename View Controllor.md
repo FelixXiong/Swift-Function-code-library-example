@@ -27,10 +27,12 @@ override var prefersStatusBarHidden: Bool {
 为普通的Navigition Bar Title设置为大标题，在首View Contrllor.swift文件中编写下列代码：
 
 ```swift
+     /*可选
      setupNavBar()
 }
 func setupNavBar(){
-            navigationController?.navigationBar.prefersLargeTitles = true
+     */
+            navigationController?.navigationBar.prefersLargeTitles = true
         }
 ```
 
