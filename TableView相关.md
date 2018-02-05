@@ -1,0 +1,57 @@
+#TableView相关
+##实现移动行重排的几个方式
+
+未确定以下方法的作用
+
+```Swift
+ //移动行
+    //是否可编辑
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+}
+```
+###方式1
+
+```Swift
+    //允许重新排序单元格，如果返回否则无法重新排序
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //执行行重排的操作
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
+        
+        let item = WillLearnArray[sourceIndexPath.row]
+        
+        exampleArray.remove(at: sourceIndexPath.row)
+        exampleArray.insert(item, at: destinationIndexPath.row)
+    }
+```
+
+参考链接：[How To Reorder/Rearrange Table View Cells In Xcode 8 (Swift 3)](https://www.youtube.com/watch?v=iym7P9jQmpU&t=604s)
+
+（exampleArray为自己修改为示例代码的作用）
+
+###方式2
+
+```swift
+ // Edit mode
+  override func setEditing(_ editing: Bool, animated: Bool) {
+    super.setEditing(editing, animated: animated)
+    exampleTableView.setEditing(editing, animated: true)
+  }
+···
+ // Move the cell
+  func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return self.isEditing
+  }
+  
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    let todo = todos.remove(at: (sourceIndexPath as NSIndexPath).row)
+    todos.insert(todo, at: (destinationIndexPath as NSIndexPath).row)
+  }
+}
+```
+
+参考链接： [soapyigu/Swift-30-Projects/Project 04 - Todo/Todo.xcodeproj/](https://github.com/soapyigu/Swift-30-Projects/tree/master/Project%2004%20-%20Todo/Todo.xcodeproj)
+
