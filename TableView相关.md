@@ -21,7 +21,7 @@
     //执行行重排的操作
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
         
-        let item = WillLearnArray[sourceIndexPath.row]
+        let item = exampleArray[sourceIndexPath.row]
         
         exampleArray.remove(at: sourceIndexPath.row)
         exampleArray.insert(item, at: destinationIndexPath.row)
