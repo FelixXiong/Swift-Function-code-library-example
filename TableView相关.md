@@ -1,6 +1,6 @@
 # TableView相关
 
-## 实现编辑按钮进行开关提示词的几个方式
+## 实现编辑按钮进行开关提示词变化的几个方式
 
 ### 方式1
 
@@ -16,6 +16,7 @@
             
         }
 ```
+参考链接：[How To Reorder/Rearrange Table View Cells In Xcode 8 (Swift 3)](https://www.youtube.com/watch?v=iym7P9jQmpU&t=604s)
 
 ### 方式2
 
@@ -31,6 +32,8 @@
             EditButton.title = "edit"          
         }
 ```
+参考链接：[Rearrange/Delete Table View (Swift4 + Xcode 9.0)](https://youtu.be/I9cJZiuYSO4)
+
 
 ## 实现移动行重排的几个方式
 
