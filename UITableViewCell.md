@@ -1,37 +1,17 @@
-# UITableView
-
-## 行
+# UITableViewCell
 
 ### 属性：高度等
 
-##### heightForRowAt
-
-设定行高度
+##### 设定行高度
 
 ```swift
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // 设置行高自适应
-        tableView.rowHeight = UITableViewAutomaticDimension
         return 100
     }
 ```
+### 选中行的操作
 
-### 选中行及其操作
-
-##### didSelectRowAt
-
-```swift
- func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- }
-```
-
-### 行的附件种类
-
-##### UITableViewCellAccessoryType
-
-#### 打checkmark
-
-###### UITableViewCellAccessoryType.checkmark
+###### 为行打checkmark
 
 ```swift
 if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark//（没有if）仅有这行再次点击不消失
@@ -44,11 +24,9 @@ if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessor
     }
 ```
 
-## 行编辑与移动
+### 行编辑与移动
 
-### 编辑
-
-##### commit editingStyle
+##### 编辑和删除行
 
 ```swift
  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -59,9 +37,7 @@ if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessor
             //创建适当类的新实例，将其插入到数组中，然后向表视图添加新行
 ```
 
-### 移动
-
-##### canMoveRowAt
+##### 移动行、重新排序
 
 允许重新排序单元格，如果返回否则无法重新排序
 
@@ -70,8 +46,6 @@ func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> B
         return true
     }
 ```
-
-##### moveRowAt
 
 执行行重排的操作
 
