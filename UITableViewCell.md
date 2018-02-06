@@ -37,7 +37,7 @@ if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessor
             //创建适当类的新实例，将其插入到数组中，然后向表视图添加新行
 ```
 
-##### 移动行、重新排序
+##### 移动行与重新排序
 
 允许重新排序单元格，如果返回否则无法重新排序
 
@@ -53,3 +53,8 @@ func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> B
 func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
    }
 ```
+这里示例代码有多种方式，
+
+参见：https://github.com/FelixXiong/Swift-Function-code-library-example/blob/master/TableView相关的功能实现的几个方式汇总.md
+
+中“实现移动行重排的几个方式”。
