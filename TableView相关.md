@@ -1,4 +1,37 @@
 # TableView相关
+
+## 实现编辑按钮进行开关提示词的几个方式
+
+### 方式1
+
+```Swift
+@IBAction func EditButton(_ sender: Any) {
+        
+        ListTableView.isEditing = !ListTableView.isEditing
+        switch WillLearnListTableView.isEditing{
+        case true:
+            EditButton.title = "done"
+        case false:
+            EditButton.title = "edit"
+            
+        }
+```
+
+### 方式2
+
+```Swift
+@IBAction func EditButton(_ sender: Any) {
+        
+        ListTableView.isEditing = !ListTableView.isEditing
+        if ListTableView.isEditing{
+            EditButton.title = "done"
+            {
+            else
+            {
+            EditButton.title = "edit"          
+        }
+```
+
 ## 实现移动行重排的几个方式
 
 未确定以下方法的作用以及是否可替代
@@ -9,6 +42,11 @@
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
 }
+ // 编辑模式
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        WillLearnListTableView.setEditing(editing, animated: true)
+    }
 ```
 ### 方式1
 
