@@ -59,26 +59,18 @@
     //执行行重排的操作
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath){
         
-        let item = exampleArray[sourceIndexPath.row]
+        let item = Array[sourceIndexPath.row]
         
-        exampleArray.remove(at: sourceIndexPath.row)
-        exampleArray.insert(item, at: destinationIndexPath.row)
+        Array.remove(at: sourceIndexPath.row)
+        Array.insert(item, at: destinationIndexPath.row)
     }
 ```
 
 参考链接：[How To Reorder/Rearrange Table View Cells In Xcode 8 (Swift 3)](https://www.youtube.com/watch?v=iym7P9jQmpU&t=604s)
 
-（exampleArray为自己修改为示例代码的作用）
-
 ### 方式2
 
 ```swift
- // Edit mode
-  override func setEditing(_ editing: Bool, animated: Bool) {
-    super.setEditing(editing, animated: animated)
-    exampleTableView.setEditing(editing, animated: true)
-  }
-···
  // Move the cell
   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
     return self.isEditing
