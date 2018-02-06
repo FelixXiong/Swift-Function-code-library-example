@@ -56,5 +56,4 @@ func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, t
 这里示例代码有多种方式，
 
 参见：https://github.com/FelixXiong/Swift-Function-code-library-example/blob/master/TableView相关的功能实现的几个方式汇总.md
-
 中“实现移动行重排的几个方式”。
