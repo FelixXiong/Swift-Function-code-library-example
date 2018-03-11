@@ -1,0 +1,23 @@
+# UIWebView和WKWebview的实现网页轻轻的方法
+
+## UIWebView
+
+```Swift
+ myWebView.load(URLRequest(url:URL(string:"https://www.pptv.com")!))
+```
+参考链接：[How To Create A WebView Browser In Xcode 8 (Swift 3)](https://youtu.be/IzNJfMzjOkQ)
+
+## WKWebView
+
+```Swift
+ override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        let url:URL = URL(string:"https://www.google.com")!//设置网址
+        let Request:URLRequest = URLRequest(url:url)//根据URL进行网络请求
+        
+        myWebView.load(Request)//载入网页
+    }
+```
+参考链接：[WebKit webviewbrowser - iOS Development in Swift 4-09)](https://youtu.be/xQmZSKxOYvs)
+        
